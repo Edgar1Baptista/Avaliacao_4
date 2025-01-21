@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudantes de LCC3T</title>
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+<body style="font-family: Arial, sans-serif;">
+    <div id="relogio"></div>
+
+    <div class="container" id="container">
+        <div class="left-side" id="leftSide">
+            <div class="logo-container">
+                <img src="unnamed.png" alt="Logo_do_Imetro" class="logo" style="padding: 5%; width: 150px;">
+            </div>
+            <form id="studentForm">
+                <div class="titulo">
+                    <center><h2 style="font-size: 200%;">LCC3T DA IMETRO</h2></center>
+                </div>
+                <div class="form-group">
+                    <label for="ID">ID</label>
+                    <input type="number" id="ID" placeholder="ID do estudante" required>
+                </div>
+                <div class="form-group">
+                    <label for="matricula">Número de Matrícula</label>
+                    <input type="text" id="matricula" placeholder="Número de matrícula" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Nome do Estudante</label>
+                    <input type="text" id="name" placeholder="Nome do estudante" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="nota_atribuida">Nota</label>
+                    <input type="number" id="nota_atribuida" placeholder="Insira a nota (0-20)" required>
+                    <small id="notaWarning" style="color: red; display: none;">Nota inválida. Deve estar entre 0 e 20.</small>
+                </div>
+                <div class="buttons">
+                    <button type="button" onclick="saveGrades()">Guardar</button>
+                    <button type="button" onclick="viewGrades()">Consultar</button>
+                    <button type="button" onclick="toggleSides()">Alterar Posicao</button>
+                </div>
+            </form>
+        </div>
+        <div class="right-side" id="rightSide">
+            <img src="http://www.imetroangola.com/img/3.jpeg" alt="Imagem Animada">
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup()">&times;</span>
+                    <h3>Notas dos Estudantes</h3>
+                    <ul id="resultList"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>&copy; LCC3T Angola 2024</footer>
+    <script src="script.js"></script>
+</body>
+</html>
